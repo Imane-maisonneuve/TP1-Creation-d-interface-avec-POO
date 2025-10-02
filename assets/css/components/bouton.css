@@ -1,0 +1,6 @@
+.bouton {
+  border: 1px solid;
+  cursor: pointer;
+  width: fit-content;
+  padding: 5px 10px;
+}

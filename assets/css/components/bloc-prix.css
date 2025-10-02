@@ -1,0 +1,4 @@
+.bloc-prix {
+  display: flex;
+  justify-content: space-between;
+}

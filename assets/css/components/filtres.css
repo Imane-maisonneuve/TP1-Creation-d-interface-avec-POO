@@ -1,0 +1,9 @@
+.filtre {
+  color: var(--couleur-texte);
+  padding: var(--espace-md);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--couleur-secondaire);
+  }
+}

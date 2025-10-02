@@ -1,0 +1,14 @@
+[id="barre-laterale"] {
+  flex-basis: 10ch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+[id="barre-laterale"] a {
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
