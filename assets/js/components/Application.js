@@ -1,15 +1,15 @@
 import livres from "../data/livres.js";
 
 import Livre from "../components/Livre.js";
+import LivreModale from "../components/LivreModale.js";
 import Filtre from "../components/Filtre.js";
 
 class Application {
   conteneurHTML;
   #listeLivresHTML;
   listeLivres;
-  #modale;
+  modale;
   #filtre;
-  #panierAchat;
 
   constructor() {
     this.conteneurHTML = document.querySelector("[data-application]");
@@ -31,6 +31,7 @@ class Application {
     livres.forEach(
       function (livre) {
         const nvLivre = new Livre(
+          this,
           this.#listeLivresHTML,
           livre.image,
           livre.titre,

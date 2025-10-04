@@ -1,4 +1,7 @@
+import LivreModale from "../components/LivreModale.js";
+import Filtre from "../components/LivreModale.js";
 class Livre {
+  #application;
   #conteneurHTML;
   #elementHTML;
   #image;
@@ -12,6 +15,7 @@ class Livre {
   #categorie;
 
   constructor(
+    application,
     conteneurHTML,
     image,
     titre,
@@ -23,6 +27,7 @@ class Livre {
     nouveaute,
     categorie
   ) {
+    this.#application = application;
     this.#conteneurHTML = conteneurHTML;
     this.#image = image;
     this.#titre = titre;
@@ -33,8 +38,15 @@ class Livre {
     this.#prix = prix;
     this.#nouveaute = nouveaute;
     this.#categorie = categorie;
-
     this.injecterHTML();
+  }
+
+  get categorie() {
+    return this.#categorie;
+  }
+
+  get nouveaute() {
+    return this.#nouveaute;
   }
 
   injecterHTML() {
@@ -48,17 +60,24 @@ class Livre {
         </div>
         </div>
     </div>`;
+
     this.#conteneurHTML.insertAdjacentHTML("beforeend", gabarit);
 
     this.#elementHTML = this.#conteneurHTML.lastElementChild;
+    this.#elementHTML.addEventListener("click", this.OnclickCarte.bind(this));
   }
 
-  get categorie() {
-    return this.#categorie;
-  }
+  OnclickCarte(evenement) {
+    this.#application.LivreModale = new LivreModale(
+      this.#application.conteneurHTML,
+      this.#image,
+      this.#auteur,
+      this.#editeur,
+      this.#pages,
+      this.#description
+    );
 
-    get nouveaute() {
-    return this.#nouveaute;
+    this.#application.LivreModale.afficher();
   }
 }
 
