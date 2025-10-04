@@ -24,10 +24,7 @@
     background-color: white;
     color: black;
     border-radius: 5px;
-    height: 40%;
-    width: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3rem;
@@ -44,6 +41,24 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+
+    & .modale__carte-detail {
+      display: flex;
+      gap: 100px;
+      justify-content: space-around;
+      margin: 40px;
+
+      & .carte-information {
+        width: 70ch;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        & .modale__texte {
+          font-size: var(--police-taille-xl);
+        }
+      }
     }
   }
 

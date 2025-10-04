@@ -39,12 +39,16 @@ class LivreModale {
     let gabarit = `<div class="modale__conteneur invisible">
             <div class="modale__carte">
                 <div class="modale__btn_fermer">X</div>
-                <img src="${this.#image}" alt="image" />
-                <p class="modale__titre">Titre : ${this.#titre}</p>
-                <p class="modale__auteur">Auteur : ${this.#auteur}</p>
-                <p class="modale__editeur">Editeur : ${this.#editeur}</p>
-                <p class="modale__pages">Pages : ${this.#pages}</p>
-                <p class="modale__description">${this.#description}</p>
+                <div class="modale__carte-detail">
+                <img class="modale__image" src="${this.#image}" alt="image" />
+                <section class="carte-information">
+                <h2 class="modale__titre">Titre : ${this.#titre}</h2>
+                <p class="modale__texte">Auteur : ${this.#auteur}</p>
+                <p class="modale__texte">Editeur : ${this.#editeur}</p>
+                <p class="modale__texte">Pages : ${this.#pages}</p>
+                <p class="modale__texte">${this.#description}</p>
+                </section>
+                </div>
             </div>
         </div>`;
     this.#conteneurHTML.insertAdjacentHTML("beforeend", gabarit);

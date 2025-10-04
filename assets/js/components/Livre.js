@@ -71,6 +71,7 @@ class Livre {
     this.#application.LivreModale = new LivreModale(
       this.#application.conteneurHTML,
       this.#image,
+      this.#titre,
       this.#auteur,
       this.#editeur,
       this.#pages,
