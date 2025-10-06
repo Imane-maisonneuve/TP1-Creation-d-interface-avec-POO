@@ -3,8 +3,7 @@ body {
   font-size: var(--police-taille-md);
   line-height: var(--interligne-base);
   background-color: var(--couleur-fond-base);
-  margin: 100px auto;
-  max-width: 2000px;
+  margin: 100px;
 }
 
 h1 {
