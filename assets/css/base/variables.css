@@ -1,6 +1,6 @@
 :root {
-  --police-titre: "Economica", sans-serif;
-  --police-corps: "Urbanist", sans-serif;
+  --police-titre: "Poppins", sans-serif;
+  --police-corps: "Roboto", sans-serif;
 
   --police-taille-sm: 0.875rem;
   --police-taille-md: 1rem;
@@ -12,9 +12,12 @@
   --espace-lg: 1.5rem;
   --espace-xl: 2rem;
 
+  --interligne-base: 1.6;
+
   --couleur-primaire: #333;
   --couleur-secondaire: #cccccc;
   --couleur-accent: #007bff;
   --couleur-favoris: #e74a93;
   --couleur-texte-base: #fff;
+  --couleur-filtre: rgb(238, 238, 149);
 }

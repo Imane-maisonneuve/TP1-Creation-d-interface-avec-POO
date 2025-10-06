@@ -2,8 +2,9 @@
   color: var(--couleur-texte);
   padding: var(--espace-md);
   cursor: pointer;
+  font-size: var(--police-taille-lg);
 
   &:hover {
-    background-color: var(--couleur-secondaire);
+    background-color: var(--couleur-filtre);
   }
 }
