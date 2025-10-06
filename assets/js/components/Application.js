@@ -11,6 +11,9 @@ class Application {
   modale;
   #filtre;
 
+  /**
+   * Initialiser l'application
+   */
   constructor() {
     this.conteneurHTML = document.querySelector("[data-application]");
 
@@ -23,10 +26,15 @@ class Application {
     this.#filtre = new Filtre(this);
   }
 
+  /**
+   * modifier la liste des livres
+   * @param {Array} nouvelleListe - La nouvelle liste de livres à définir
+   */
   set listeLivres(nouvelleListe) {
     this.listeLivres = nouvelleListe;
   }
 
+  // Récupérer les données des livres
   #recupererDonneesLivre() {
     livres.forEach(
       function (livre) {
@@ -48,6 +56,7 @@ class Application {
     );
   }
 
+  // Afficher la liste des livres
   afficherListeLivres() {
     this.#listeLivresHTML.innerHTML = "";
     this.listeLivres.forEach(
@@ -57,6 +66,10 @@ class Application {
     );
   }
 
+  /**
+   * Afficher la liste des filtres
+   * @param {Array} listefiltre
+   */
   afficherListeFiltre(listefiltre) {
     this.#listeLivresHTML.innerHTML = "";
     listefiltre.forEach(

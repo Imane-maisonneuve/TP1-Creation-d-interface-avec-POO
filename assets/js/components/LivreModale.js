@@ -1,3 +1,7 @@
+/**
+ * Classe représentant la modale d’affichage des détails d’un livre.
+ * Elle gère la création du HTML de la modale, son affichage et sa fermeture.
+ */
 class LivreModale {
   #conteneurHTML;
   #elementHTML;
@@ -9,6 +13,19 @@ class LivreModale {
   #pages;
   #description;
 
+  /**
+   * Crée une instance de la modale pour un livre donné.
+   *
+   * @param {HTMLElement} conteneurHTML
+   * @param {string} image
+   * @param {string} titre
+   * @param {string} auteur
+   * @param {string} editeur
+   * @param {number} pages
+   * @param {string} description
+   *
+   * @returns {void}
+   */
   constructor(
     conteneurHTML,
     image,
@@ -27,13 +44,13 @@ class LivreModale {
     this.#pages = pages;
     this.#description = description;
 
+    // Injection automatique du HTML de la modale lors de l’instanciation
     this._injecterHTML();
   }
 
   /**
-   * Méthode "protégée" pour injecter le HTML de la modale dans le DOM
-   * Crée un élément HTML pour la modale et l'ajoute au conteneur HTML
-   * Ajoute un écouteur d'événement pour fermer la modale lorsqu'on clique sur le X
+   * Injecter dynamiquement le HTML de la modale dans le conteneur.
+   * Créer les éléments visuels et relier le bouton de fermeture.
    */
   _injecterHTML() {
     let gabarit = `<div class="modale__conteneur invisible">
@@ -64,19 +81,21 @@ class LivreModale {
   }
 
   /**
-   * Méthode publique pour afficher la modale, peut être appelée de l'extérieur
+   * Afficher la modale à l’écran.
+   * Supprimer la classe "invisible" et bloquer le défilement du body.
    */
   afficher() {
     this.#elementHTML.classList.remove("invisible");
-    document.body.classList.add("modale-verrou"); // Empêche le défilement de la page
+    document.body.classList.add("modale-verrou");
   }
 
   /**
-   * Méthode publique pour fermer la modale
+   * Fermer la modale lorsqu’on clique sur le bouton "X".
+   * Ajouter la classe "invisible" et rétablir le défilement du body.
    */
   Onclickfermer() {
     this.#elementHTML.classList.add("invisible");
-    document.body.classList.remove("modale-verrou"); // Rétablit le défilement de la page
+    document.body.classList.remove("modale-verrou");
   }
 }
 

@@ -1,5 +1,9 @@
 import LivreModale from "../components/LivreModale.js";
-import Filtre from "../components/LivreModale.js";
+
+/**
+ * Classe représentant un livre dans l’application.
+ * Gèrer l’affichage de la carte du livre et l’ouverture de la modale détaillée.
+ */
 class Livre {
   #application;
   #conteneurHTML;
@@ -14,6 +18,21 @@ class Livre {
   #nouveaute;
   #categorie;
 
+  /**
+   * Créer une nouvelle instance de Livre et injecter son HTML dans le conteneur.
+   *
+   * @param {Object} application
+   * @param {HTMLElement} conteneurHTML
+   * @param {string} image
+   * @param {string} titre
+   * @param {string} auteur
+   * @param {string} editeur
+   * @param {number} pages
+   * @param {string} description
+   * @param {number} prix
+   * @param {boolean} nouveaute
+   * @param {string} categorie
+   */
   constructor(
     application,
     conteneurHTML,
@@ -49,6 +68,10 @@ class Livre {
     return this.#nouveaute;
   }
 
+  /**
+   * Injecter dynamiquement le HTML d’une carte de livre dans le conteneur.
+   * Ajouter aussi un écouteur d’événement pour gérer le clic sur la carte.
+   */
   injecterHTML() {
     const gabarit = `<div class="carte" data-livre>
         <img src="${this.#image}" alt="image" />
@@ -67,7 +90,10 @@ class Livre {
     this.#elementHTML.addEventListener("click", this.OnclickCarte.bind(this));
   }
 
-  OnclickCarte(evenement) {
+  /**
+   * Gèrer le clic sur une carte de livre et ouvre la modale correspondante.
+   */
+  OnclickCarte() {
     this.#application.LivreModale = new LivreModale(
       this.#application.conteneurHTML,
       this.#image,
