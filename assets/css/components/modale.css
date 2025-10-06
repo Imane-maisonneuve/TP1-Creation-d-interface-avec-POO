@@ -50,7 +50,7 @@
       margin: 40px;
 
       & .carte-information {
-        width: 70ch;
+        width: 60ch;
         display: flex;
         flex-direction: column;
         gap: 10px;

@@ -1,6 +1,6 @@
 .filtre {
   color: var(--couleur-texte);
-  padding: var(--espace-md);
+  padding: var(--espace-xs);
   cursor: pointer;
   font-size: var(--police-taille-lg);
 
